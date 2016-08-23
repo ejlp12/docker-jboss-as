@@ -1,15 +1,15 @@
-# JBoss 7.1.1 final on Alpine Linux + Oracle JRE
+# JBoss 7.1.3 final on Alpine Linux + Oracle JRE
 
-Base image for JBoss 7.1.1 deployment.
+Base image for JBoss 7.1.3 deployment.
 
 ## Target usage: custom derived images with your own deployment
 
 Create a new Dockerfile and copy everything over the base image:
 
 ```
-FROM netservicespa/docker-jboss-as:7.1.1
-ADD file.ear /opt/jboss-as-7.1.1.Final/standalone/deployments/file.ear
-COPY standalone.xml /opt/jboss-as-7.1.1.Final/standalone/configuration/standalone.xml
+FROM netservicespa/docker-jboss-as:7.1.3
+ADD file.ear /opt/jboss-as-7.1.3.Final/standalone/deployments/file.ear
+COPY standalone.xml /opt/jboss-as-7.1.3.Final/standalone/configuration/standalone.xml
 ```
 
 ## Management password (inherited from pascalgrimaud/jboss-as:7.1.1)
@@ -17,7 +17,7 @@ COPY standalone.xml /opt/jboss-as-7.1.1.Final/standalone/configuration/standalon
 Quick start with binding to port 8080, 9990 and random password :
 
 ```
-docker run -d -p 8080:8080 -p 9990:9990 netservicespa/docker-jboss-as:7.1.1
+docker run -d -p 8080:8080 -p 9990:9990 netservicespa/docker-jboss-as:7.1.3
 ```
 
 To get the password :
@@ -29,7 +29,7 @@ docker logs <container id>
 Start and set a specific password for JBoss admin user :
 
 ```
-docker run -d -p 8080:8080 -p 9990:9990 -e JBOSS_PASS="pass" netservicespa/docker-jboss-as:7.1.1
+docker run -d -p 8080:8080 -p 9990:9990 -e JBOSS_PASS="pass" netservicespa/docker-jboss-as:7.1.3
 ```
 
 If you forget the admin password, delete the file .password and restart the container :
