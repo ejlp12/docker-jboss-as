@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t pascalgrimaud/jboss-as:7.1.1 .
+docker build -t netservicespa/docker-jboss-as:7.1.3 .

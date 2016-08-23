@@ -4,9 +4,9 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t pascalgrimaud/jboss-as:7.1.1 .
+    - docker build -t netservicespa/docker-jboss-as:7.1.3 .
 test:
   override:
-    - docker run -d -p 18080:8080 -p 19990:9990 --name=jboss -e JBOSS_PASS="pgrimaud" pascalgrimaud/jboss-as:7.1.1 ; sleep 10
+    - docker run -d -p 18080:8080 -p 19990:9990 --name=jboss -e JBOSS_PASS="ziopino" netservicespa/docker-jboss-as:7.1.3 ; sleep 10
     - docker logs jboss
     - curl -I http://localhost:18080 | grep "HTTP/1.1 200 OK"
