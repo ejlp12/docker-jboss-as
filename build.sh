@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t netservicespa/docker-jboss-as:7.1.3 .
+docker build -t netservice/docker-jboss-as:7.1.3 .

@@ -1,5 +1,5 @@
 jboss:
-  image: netservicespa/docker-jboss-as:7.1.3
+  image: netservice/docker-jboss-as:7.1.3
   ports:
   - "8080:8080"
   - "9990:9990"
